@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import Navbar from './Navbar';
-import Header from './Header';
+import Navbar from '../components/Navbar';
+import Header from '../components/Header';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import Constants from '../api/Constants';
@@ -9,7 +9,7 @@ import StarRatings from 'react-star-ratings';
 import { useDispatch, useSelector } from 'react-redux';
 import { addCartItem, removeCartItem } from '../store/slices/CartItemSlice';
 import { AiOutlineShoppingCart,AiFillHeart } from 'react-icons/ai';
-import Loader from './Loader';
+import Loader from '../components/Loader';
 import { addFavItem, removeFavItem } from '../store/slices/FavItemSlice';
 
 const ProductDetails = () => {
@@ -19,6 +19,7 @@ const ProductDetails = () => {
   const [itemAdded, setItemAdded] = useState(false);
   const [textColor, setTextColor] = useState("Add to Cart");
   const cartItem = useSelector((state) => state.items);
+  const favItem = useSelector((state) => state.favItems)
   const [favItemAdded, setFavItemAdded] = useState(false);
   const dispatch = useDispatch();
   const { id } = useParams();
@@ -66,6 +67,13 @@ const ProductDetails = () => {
         setTextColor("Remove from cart")
       }
     })
+
+    favItem.map((item) => {
+      if (item.id == detailProduct.id) {
+        setFavItemAdded(true);
+      }
+    })
+
   }, [id])
 
   return (

@@ -9,7 +9,8 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import MainCartItems from './components/MainCartItems';
 import FavItem from './components/FavItem';
-import ProductDetails from './components/ProductDetails';
+import ProductDetails from './pages/ProductDetails';
+
 function App() {
   return (
     <Router >
