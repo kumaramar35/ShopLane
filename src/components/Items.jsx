@@ -77,11 +77,16 @@ const Items = (props) => {
 
           <Button onClick={() => { handleFav(props.product) }} ><AiFillHeart style={favItemAdded ? { color: "red" } : { color: "black" }} /></Button>
         </div>
+
+        {/* <Link to={'/product/details/'+props.product.id}> */}
         <CardImage src={props.product.image} className="card-img-top mx-auto d-block mt-5" alt="Product" />
+        {/* </Link> */}
         <CardBody className="card-body">
     
-        <BrandRatingPricing  title ={props.product.title} rate={props.product.rating.rate} count={props.product.rating.count} 
+      <Link to={'/product/details/'+props.product.id}>
+        <BrandRatingPricing  fullDetail={false} title ={props.product.title} rate={props.product.rating.rate} count={props.product.rating.count} 
         price={props.product.price} />
+         </Link>
         
        
           <p className="card-text"> </p>

@@ -9,6 +9,7 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import MainCartItems from './components/MainCartItems';
 import FavItem from './components/FavItem';
+import ProductDetails from './components/ProductDetails';
 function App() {
   return (
     <Router >
@@ -22,6 +23,7 @@ function App() {
           <Route path='/signup' element={<RegisterPage />} />
           <Route path='/cart' element={<MainCartItems />} />
           <Route path='/fav' element ={<FavItem />} />
+          <Route path='/product/details/:id' element={<ProductDetails />} />
         </Routes>
     </Router>
   );

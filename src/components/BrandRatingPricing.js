@@ -13,7 +13,7 @@ const BrandRatingPricing = (props) => {
                     <b className='me-1 text-dark'  >Brand  </b>
 
 
-                    {props.title.length > 20 ? `${props.title.slice(0, 12)}...` : props.title}
+                    { props.fullDetail ? props.title : (props.title.length > 20 ? `${props.title.slice(0, 12)}...` : props.title)}
                 </div>
             </h5>
 
