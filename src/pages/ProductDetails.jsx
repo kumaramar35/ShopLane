@@ -53,27 +53,26 @@ const ProductDetails = () => {
 
   const fetchProduct = () => {
     axios(`${Constants.ALL_PRODUCTS_URL}/${id}`)
-      .then((res) => setDetailProduct(res.data))
+      .then((res) => {
+        setDetailProduct(res.data);
+
+  //will check the item is added or not
+        cartItem.map((item) => { 
+          if (item.id == res.data.id) {
+             setItemAdded(true)
+             setTextColor("Remove from cart")
+          }
+        })
+        favItem.map((item) => {
+          if (item.id == res.data.id) {
+            setFavItemAdded(true);
+          }
+        })
+      })
       .catch((error) => console.log(error))
   }
-
   useEffect(() => {
     fetchProduct();
-    //if you return back from the cart ,then the products  will remain selected , which we selected previously 
-    //will check the item is added or not
-    cartItem.map((item) => {
-      if (item.id == detailProduct.id) {
-        setItemAdded(true)
-        setTextColor("Remove from cart")
-      }
-    })
-
-    favItem.map((item) => {
-      if (item.id == detailProduct.id) {
-        setFavItemAdded(true);
-      }
-    })
-
   }, [id])
 
   return (
@@ -116,7 +115,7 @@ const ProductDetails = () => {
 
 
               <Cart
-                className={itemAdded ? 'btn btn-danger d-flex align-items-center justify-content-center w-100' : 'btn btn-primary d-flex align-items-center justify-content-center w-100'}
+                className={itemAdded ? 'btn btn-danger d-flex align-items-center justify-content-center w-100 mt-4' : 'btn btn-primary d-flex align-items-center justify-content-center w-100 mt-4'}
                 onClick={() => {
                   handleCart(detailProduct);
 
