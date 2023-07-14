@@ -13,13 +13,14 @@ const MainCartItems = () => {
   const items = useSelector((state) => state.items)
   let total = 0;
   // text for the empty cart to be passed to EmptyItems components
-  const text1= "There are no Products in Your Cart"
-  const text2 ="Add the products you like to the cart and Buy."
+  const TEXT_FOR_EMPTY_CART= "There are no Products in Your Cart"
+  const TEXT_FOR_EMPTY_FAV ="Add the products you like to the cart and Buy."
   
 //get the total of the products 
   for (let i = 0; i < items.length; i++) {
     total = total + items[i].price;
   }
+ 
   console.log(items)
   return (
     <div>
@@ -63,7 +64,7 @@ const MainCartItems = () => {
         </div>
       </div>
       :
-      <EmptyItems icons={<AiOutlineShoppingCart />} text1={text1} text2={text2} /> 
+      <EmptyItems icons={<AiOutlineShoppingCart />} text1={TEXT_FOR_EMPTY_CART} text2={TEXT_FOR_EMPTY_FAV} /> 
        }
 
     </div>

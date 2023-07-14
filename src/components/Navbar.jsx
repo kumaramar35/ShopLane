@@ -16,7 +16,6 @@ const Navbar = () => {
   
 
   const handleCart = () =>{
-    console.log("hi")
     navigate('/cart')
   }
   return (
