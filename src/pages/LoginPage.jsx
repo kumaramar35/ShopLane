@@ -29,10 +29,8 @@ const LoginPage = () => {
       .post(Constants.LOGIN_URL, values)
       .then(
         (response) => {
-          setRequestResponse({
-            textMessage: "login successfull",
-            alertClass: "alert alert-success",
-          });
+
+       alert("Login Successful")
 
           localStorage.setItem("token", response.data.token);
           localStorage.setItem("user", JSON.stringify(response.data.user));
@@ -41,13 +39,13 @@ const LoginPage = () => {
             console.log("logout")
             alert("You have been logout plz login");
             navigate('/login')
-          }, 600000);
+          }, 60000);
 
           navigate("/");
         },
         (error) => {
           setRequestResponse({
-            textMessage: error.response.data.message,
+            textMessage: "Invalid UserName or password",
             alertClass: "alert alert-danger",
           });
         }
@@ -57,7 +55,7 @@ const LoginPage = () => {
 
   const validationSchema = Yup.object({
     username: Yup.string()
-      .required("email is required"),
+      .required("userName is required"),
     password: Yup.string()
       .required("password is required")
       .min(6, "password must be at least 6 characters"),
@@ -98,7 +96,7 @@ const LoginPage = () => {
                               : "form-control"
                           }
                         />
-                        <ErrorMessage name="email">
+                        <ErrorMessage name="username">
                           {(errorMessage) => (
                             <small className="text-danger">{errorMessage}</small>
                           )}

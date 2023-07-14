@@ -43,9 +43,9 @@ const Navbar = () => {
           {/* <Badges className="badge badge-light">
          4
           </Badges> */}
-          <h4><Cart onClick={() => handleCart()}><BsCart3></BsCart3></Cart> <Badges><span className="badge badge-secondary" style={{background:'red',borderRadius:'50%'}}>
+         <span><Cart onClick={() => handleCart()}><BsCart3></BsCart3></Cart> <Badges><span className="badge badge-secondary" style={{background:'red',borderRadius:'50%'}}>
             {cartItem.length}
-          </span></Badges></h4>
+          </span></Badges></span>
           
         </div>
         
@@ -67,11 +67,10 @@ const Cart = styled.button`
      font-size: 2.5rem;
     position: absolute;
     margin-left: 0px;
-    margin-top: 8px;
+    margin-top: 5px;
 `
 
-const Badges = styled.h6`
-    
+const Badges = styled.h6`  
     position: absolute;
     margin-left: 2%;
     margin-bottom: -43%;

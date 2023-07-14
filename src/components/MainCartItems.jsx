@@ -43,7 +43,7 @@ const MainCartItems = () => {
             <div className="order-summary">
               <h4 className='text-center'> Order summary</h4>
               <SummaryItem className="summary-item">
-                <summaryLabel>Subtotal</summaryLabel>
+                <SummaryLabel>Subtotal</SummaryLabel>
                 <span>${total.toFixed(2)}</span>
               </SummaryItem>
               <SummaryItem className="summary-item">

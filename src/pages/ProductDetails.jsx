@@ -102,6 +102,9 @@ const ProductDetails = () => {
                </div>
               </Rating>
 
+                <div className="font-weight-bold text-capitalize" >
+                   <i>{detailProduct.description} </i>
+                </div>
 
               <div className="d-flex row-start">
                 <Price>
