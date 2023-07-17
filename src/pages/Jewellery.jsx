@@ -13,7 +13,7 @@ const Jewellery = () => {
         axios(EndPoints.JEWELLERY_URL)
         .then((res)=> setJewelleryItem(res.data))
         .catch((error)=>console.log(error))
-    })
+    },[])
   return (
     <>
     <Navbar />

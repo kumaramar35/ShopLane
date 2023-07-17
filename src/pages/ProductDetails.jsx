@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Navbar from '../components/Navbar';
 import Header from '../components/Header';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import Constants from '../api/Constants';
 import StarRatings from 'react-star-ratings';
@@ -11,6 +11,7 @@ import { addCartItem, removeCartItem } from '../store/slices/CartItemSlice';
 import { AiOutlineShoppingCart,AiFillHeart } from 'react-icons/ai';
 import Loader from '../components/Loader';
 import { addFavItem, removeFavItem } from '../store/slices/FavItemSlice';
+import ErrorPage from './ErrorPage';
 
 const ProductDetails = () => {
   //product detail
@@ -23,6 +24,8 @@ const ProductDetails = () => {
   const [favItemAdded, setFavItemAdded] = useState(false);
   const dispatch = useDispatch();
   const { id } = useParams();
+  const navigate = useNavigate();
+// console.log(id.length)
 
   //handle the cart text and image
   const handleCart = (payload) => {
@@ -74,6 +77,7 @@ const ProductDetails = () => {
   useEffect(() => {
     fetchProduct();
   }, [id])
+ 
 
   return (
     <>
@@ -132,8 +136,8 @@ const ProductDetails = () => {
           <div className="col-md-"></div>
         </div>
       </Container>
-        :
-        <Loader />
+        :   parseInt(id) > 20 ? navigate('*') :<Loader />
+        
       }
     </>
   );

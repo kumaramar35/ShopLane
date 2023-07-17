@@ -14,7 +14,7 @@ const MensClothing = () => {
         axios(EndPoints.MENS_CLOTHING_URL)
         .then((res)=> setMensClothingItem(res.data))
         .catch((error)=>console.log(error))
-    })
+    },[])
   return (
     <>
         <Navbar />

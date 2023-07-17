@@ -25,6 +25,7 @@ const Navbar = () => {
       <nav className="navbar navbar-light bg-white ">
         <span className="navbar-brand mb-0 h1 " style={{ color: '#42A5F5', fontSize: "30px" ,cursor:'pointer' }} onClick={()=> navigate('/')}>SHOP<span style={{ color: 'black' }}>LANE</span></span>
 
+        
         <div className="d-flex me-5 pe-5  test">
           <div className="dropdown " >
             <button type="button" className="btn  border dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="10,20">

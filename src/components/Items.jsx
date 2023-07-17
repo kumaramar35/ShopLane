@@ -24,9 +24,6 @@ const Items = (props) => {
   const handleCart = (payload) => {
     if (textColor == "Add to Cart") {
       // console.log(payload)
-
-      
-      
       setItemAdded(true)
       setTextColor("Remove from cart")
       dispatch(addCartItem(payload))

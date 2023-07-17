@@ -15,11 +15,14 @@ const MainCartItems = () => {
   // text for the empty cart to be passed to EmptyItems components
   const TEXT_FOR_EMPTY_CART= "There are no Products in Your Cart"
   const TEXT_FOR_EMPTY_FAV ="Add the products you like to the cart and Buy."
+
   
 //get the total of the products 
+// console.log(quantity)
   for (let i = 0; i < items.length; i++) {
     total = total + items[i].price;
   }
+
  
   console.log(items)
   return (

@@ -37,9 +37,9 @@ const LoginPage = () => {
           setTimeout(() => {
             localStorage.clear()
             console.log("logout")
-            alert("You have been logout plz login");
+            alert("You have been logout plz login ");
             navigate('/login')
-          }, 60000);
+          }, 300000);
 
           navigate("/");
         },

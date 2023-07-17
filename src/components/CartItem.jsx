@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { RiDeleteBin5Line } from 'react-icons/ri'
-import { useDispatch } from 'react-redux'
-import { removeCartItem } from '../store/slices/CartItemSlice'
+import { useDispatch, useSelector } from 'react-redux'
+import {  decreaseQuantity, increaseQuantity, removeCartItem } from '../store/slices/CartItemSlice'
 
 const CartItem = (props) => {
 
@@ -10,6 +10,20 @@ const CartItem = (props) => {
     const handleDelete = (payload) => {
         dispatch(removeCartItem(payload))
     }
+    //for the number of quantity
+    const [quantity, setQuantity] = useState(1);
+
+    const handleIncrease = () => {
+      setQuantity(quantity + 1);
+    };
+  
+    const handleDecrease = () => {
+      if (quantity > 1) {
+        setQuantity(quantity - 1);
+      }
+    };
+
+    
     return (
         <Container className='container'>
             <Row className="row mt-4">
@@ -30,10 +44,11 @@ const CartItem = (props) => {
                 </div>
 
                 {/* Delete button By clicking on the delete icon it will delete the item from the cart */}
-                <DeleteIconContainer className="col-md-2 mt-4 ">
+                <DeleteIconContainer className="col-md-2 mt-4 d-flex flex-column">
 
                     <DeleteButton onClick={() => { handleDelete(props.item) }}><RiDeleteBin5Line /></DeleteButton>
 
+                   
                 </DeleteIconContainer>
             </Row>
         </Container>

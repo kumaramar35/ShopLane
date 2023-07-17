@@ -13,7 +13,7 @@ const WomenClothing = () => {
         axios(EndPoints.WOMEN_CLOTHING_URL)
         .then((res)=> setWomenClothingItem(res.data))
         .catch((error)=>console.log(error))
-    })
+    },[])
   return (
     <>
     <Navbar />

@@ -8,11 +8,12 @@ import Loader from '../components/Loader';
 
 const Electronics = () => {
     const [electronicsItem, setElectronicsItem] = useState([]);
+
     useEffect(()=>{
         axios(EndPoints.ELECTRONICS_URL)
         .then((res) => setElectronicsItem(res.data))
         .catch((error) => console.log(error));
-    })
+    },[])
   return (
     <>
     <Navbar />
