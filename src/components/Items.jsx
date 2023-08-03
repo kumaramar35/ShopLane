@@ -16,7 +16,7 @@ const Items = (props) => {
   // this state for adding or removing the item in FavCart
   const [favItemAdded, setFavItemAdded] = useState(false);
   const dispatch = useDispatch();
-  const cartItem = useSelector((state) => state.items)
+  const cartItem = useSelector((state) => state.items.item)
   const favItem = useSelector((state) => state.favItems)
 
 
@@ -109,6 +109,7 @@ const Items = (props) => {
 export default Items
 
 const Card = styled.div`
+width:17rem:
   margin-top: 1.5rem;
   text-align: center;
   border-radius:8px;

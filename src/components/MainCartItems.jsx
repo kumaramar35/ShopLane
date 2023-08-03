@@ -10,7 +10,7 @@ import {AiOutlineShoppingCart} from 'react-icons/ai'
 //this is the main Cart item page which have sub component CartItem
 
 const MainCartItems = () => {
-  const items = useSelector((state) => state.items)
+  const items = useSelector((state) => state.items.item)
   let total = 0;
   // text for the empty cart to be passed to EmptyItems components
   const TEXT_FOR_EMPTY_CART= "There are no Products in Your Cart"

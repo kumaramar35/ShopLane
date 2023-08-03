@@ -8,6 +8,7 @@ const CartItem = (props) => {
 
     const dispatch = useDispatch();
     const handleDelete = (payload) => {
+        console.log(payload)
         dispatch(removeCartItem(payload))
     }
     //for the number of quantity

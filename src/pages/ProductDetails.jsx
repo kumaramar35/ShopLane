@@ -19,7 +19,7 @@ const ProductDetails = () => {
   //item added to cart
   const [itemAdded, setItemAdded] = useState(false);
   const [textColor, setTextColor] = useState("Add to Cart");
-  const cartItem = useSelector((state) => state.items);
+  const cartItem = useSelector((state) => state.items.item);
   const favItem = useSelector((state) => state.favItems)
   const [favItemAdded, setFavItemAdded] = useState(false);
   const dispatch = useDispatch();

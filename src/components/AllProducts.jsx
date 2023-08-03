@@ -20,7 +20,7 @@ export const AllProducts = () => {
 
         <>
             <div className="container mt-5">
-                <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4" >
+                <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 "  >
                     {allProducts.length ?  allProducts.map((product, index) => (
                         <Items key={product.id} product={product} />
                     )) 

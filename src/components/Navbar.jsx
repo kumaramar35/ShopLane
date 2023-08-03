@@ -12,7 +12,7 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 
 const Navbar = () => {
   const navigate = useNavigate()
-  const cartItem = useSelector((state) => state.items)
+  const cartItem = useSelector((state) => state.items.item)
   
 
   const handleCart = () =>{
@@ -44,7 +44,7 @@ const Navbar = () => {
          4
           </Badges> */}
          <span><Cart onClick={() => handleCart()}><BsCart3></BsCart3></Cart> <Badges><span className="badge badge-secondary" style={{background:'red',borderRadius:'50%'}}>
-            {cartItem.length}
+            { cartItem ?cartItem.length: 0}
           </span></Badges></span>
           
         </div>
